@@ -6,7 +6,7 @@ import math
 import time
 from related_functions import blit_rotate_center, angle_between_two_vectors, angle_by_sin_cos
 from data import sail_force_by_angle # Словарь с эксперементальными данными для разныых углов атаки паруса
-from textures import WATER, WIND_ARROW, BOAT_0, BOAT_LEFT_15, BOAT_LEFT_30, BOAT_LEFT_45, BOAT_LEFT_60, BOAT_LEFT_75, BOAT_LEFT_90, BOAT_RIGHT_15, BOAT_RIGHT_30, BOAT_RIGHT_45, BOAT_RIGHT_60, BOAT_RIGHT_75, BOAT_RIGHT_90
+from textures import WATER, WIND_ARROW, BOAT_0, BOAT_LEFT_5, BOAT_LEFT_15, BOAT_LEFT_30, BOAT_LEFT_45, BOAT_LEFT_60, BOAT_LEFT_75, BOAT_LEFT_90, BOAT_RIGHT_5, BOAT_RIGHT_15, BOAT_RIGHT_30, BOAT_RIGHT_45, BOAT_RIGHT_60, BOAT_RIGHT_75, BOAT_RIGHT_90
 
 WIDTH, HEIGHT = WATER.get_width(), WATER.get_height() 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT)) # Размер экрана выбирается по размеру фона
@@ -109,10 +109,12 @@ class Boat:
         ''' Функция по отрисовке лодки'''
         angle = self.sail_angle_to_wind()
         
-        if (angle < 1) and ((self.course < 1) or (self.course > 359)): # левентик
+        if (angle < 1) and ((self.course < 1) or (self.course > 359)):
             texture = BOAT_0
         elif self.course <= 180:        # Несколько картинок лодки с разным изображенным положением паруса
-            if self.mainsheet <= 15:    # Правый галс
+            if self.mainsheet <= 5:    # Правый галс
+                texture = BOAT_RIGHT_5
+            elif self.mainsheet <= 15:    # Правый галс
                 texture = BOAT_RIGHT_15
             elif self.mainsheet <= 30:
                 texture = BOAT_RIGHT_30
@@ -125,7 +127,9 @@ class Boat:
             else:
                 texture = BOAT_RIGHT_90
         else:
-            if self.mainsheet <= 15:    # Левый галс
+            if self.mainsheet <= 5:    # Левый галс
+                texture = BOAT_LEFT_5
+            elif self.mainsheet <= 15:    # Левый галс
                 texture = BOAT_LEFT_15
             elif self.mainsheet <= 30:
                 texture = BOAT_LEFT_30
