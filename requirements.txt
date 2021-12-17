@@ -1,0 +1,1 @@
+This projec was written on Python 3.10.1 and uses pygame library. To install enter 'pip install pygame'
