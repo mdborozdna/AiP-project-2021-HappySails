@@ -1,4 +1,4 @@
-# DRUNKEN SAILS 
+# HAPPY SAILS 
 # PROJECT BY BOROZDNA M D 2021 БИБ213
 
 import pygame
@@ -20,6 +20,7 @@ WIND_COEFFICIENT = MAX_FORCE / 1.2  #
 FPS = 60
 
 class Boat:
+    ''' sss'''
     def __init__(self, length, mass, rotation_speed, course = 90, texture = BOAT_0, start_position = (WIDTH/2, HEIGHT/2)):
         '''длина, масса, скорость поворота задаются при создании объекта. Начальный курс, картинка лодки и её позиция по умолчанию заданы.'''
         self.texture = texture 
@@ -109,7 +110,7 @@ class Boat:
         ''' Функция по отрисовке лодки'''
         angle = self.sail_angle_to_wind()
         
-        if (angle < 1) and ((self.course < 1) or (self.course > 359)):
+        if ((angle < 1) and ((self.course < 1) or (self.course > 359))) or ((angle > 179) and (self.course < 181) and (self.course > 179)):
             texture = BOAT_0
         elif self.course <= 180:        # Несколько картинок лодки с разным изображенным положением паруса
             if self.mainsheet <= 5:    # Правый галс
