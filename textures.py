@@ -1,10 +1,16 @@
+"""
+Модуль содержит все изображения, используемые для отрисовки графики в игре.
+"""
+
 import pygame
 
-# Все текстуры
 
 WATER = pygame.image.load("textures/waterbest.png")
+"""Текстура воды"""
 WIND_ARROW = pygame.image.load("textures/wind_arrow2.png")
+"""Текстура стрелки, указывающей направление ветра"""
 
+# Текстуры лодки BOAT_<галс>_<угол паруса к лодке>
 BOAT_0 = pygame.image.load("textures/boatssail/boat0.png")
 BOAT_LEFT_5 = pygame.image.load("textures/boatssail/boatleft5.png")
 BOAT_LEFT_15 = pygame.image.load("textures/boatssail/boatleft15.png")
