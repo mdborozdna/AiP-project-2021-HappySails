@@ -151,7 +151,8 @@ class Boat:
         if self.course < 180: # При движении вверх значения по y будут обратными
             force_y = -force_y
         force_x = -force_x
-
+        if (((self.course < 90) and (self.course - self.mainsheet <= 0)) or ((self.course > 270) and (self.course + self.mainsheet >= 360))):
+            force_y = -force_y
         force_x *= WIND_COEFFICIENT
         force_y *= WIND_COEFFICIENT
 
