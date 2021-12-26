@@ -1,8 +1,6 @@
 # AiP-project-2021-HappySails
 
-This game was made by a student of HSE MIEM, Borozdna M D
-
-It is written on Python version 3.10.1, and uses pygame library.
+Written on Python version 3.10.1, uses pygame library.
 
 Please note, that this project contains a function which was oroginally published by techwithtim : https://github.com/techwithtim/Pygame-Car-Racer/blob/main/tutorial1-code/main.py
 
